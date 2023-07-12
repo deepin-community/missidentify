@@ -1,0 +1,49 @@
+Description: define PATH_MAX variable to fix a FTBFS in Hurd.
+Author: Joao Eriberto Mota Filho <eriberto@debian.org>
+Last-Update: 2015-06-15
+Index: missidentify-1.0/main.c
+===================================================================
+--- missidentify-1.0.orig/main.c
++++ missidentify-1.0/main.c
+@@ -3,6 +3,11 @@
+ 
+ #include "main.h"
+ 
++// Fix build in HURD on Debian
++#if defined(__GNU__) && !defined(PATH_MAX)
++#define PATH_MAX 1024
++#endif
++
+ void usage(void)
+ {
+   print_status("%s version %s by %s", __progname, VERSION, AUTHOR);
+Index: missidentify-1.0/dig.c
+===================================================================
+--- missidentify-1.0.orig/dig.c
++++ missidentify-1.0/dig.c
+@@ -16,6 +16,10 @@
+ 
+ #include "main.h"
+ 
++// Fix build in HURD on Debian
++#if defined(__GNU__) && !defined(PATH_MAX)
++#define PATH_MAX 1024
++#endif
+ 
+ #ifndef _WIN32
+ static void remove_double_slash(TCHAR *fn)
+Index: missidentify-1.0/cycles.c
+===================================================================
+--- missidentify-1.0.orig/cycles.c
++++ missidentify-1.0/cycles.c
+@@ -16,6 +16,10 @@
+ 
+ #include "main.h"
+ 
++// Fix build in HURD on Debian
++#if defined(__GNU__) && !defined(PATH_MAX)
++#define PATH_MAX 1024
++#endif
+ 
+ typedef struct dir_table {
+   TCHAR *name;

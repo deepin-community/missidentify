@@ -1,0 +1,23 @@
+Description: fix a hyphen used as minus sign and a typo in manpage
+Author: Joao Eriberto Mota Filho <eriberto@debian.org>
+        Giovani Augusto Ferreira <giovani@riseup.net>
+Last-Update: 2016-09-22
+Index: missidentify-1.0/missidentify.1
+===================================================================
+--- missidentify-1.0.orig/missidentify.1
++++ missidentify-1.0/missidentify.1
+@@ -19,12 +19,12 @@ display the filename of all executable f
+ \fB\-r\fR
+ Enables recursive mode. All subdirectories are traversed. Please note
+ that recursive mode cannot be used to examine all files of a given 
+-file extension. For example, calling missidentify -r *.txt will examine
++file extension. For example, calling missidentify \-r *.txt will examine
+ all files in \fIdirectories\fR that end in .txt. 
+ 
+ .TP
+ \fB\-q\fR
+-Silent mode. All error messages except fatal errors are surpressed.
++Silent mode. All error messages except fatal errors are surppressed.
+ 
+ .TP
+ \fB\-a\fR

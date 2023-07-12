@@ -1,15 +1,26 @@
-Source: template-repository
-Section: unknown
+Source: missidentify
+Section: utils
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Security Tools <team+pkg-security@tracker.debian.org>
+Uploaders:
+ Giovani Augusto Ferreira <giovani@debian.org>
+Build-Depends:
+ debhelper-compat (=13)
+Standards-Version: 4.5.0
+Rules-Requires-Root: binary-targets
+Homepage: http://missidentify.sf.net
+Vcs-Browser: https://salsa.debian.org/pkg-security-team/missidentify
+Vcs-Git: https://salsa.debian.org/pkg-security-team/missidentify.git
 
-Package: template-repository
+Package: missidentify
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: find win32 applications
+ Miss Identify (missidentify) is a program to find MS Windows type win32
+ applications. By default, it displays the filename of any executable that
+ does not have an extension, as exe, dll, com, sys, cpl, hxs, hxi, olb, rll
+ or tlb. It can also display all the executables regardless the extension.
+ .
+ Miss Identify is useful in forensics investigations.
